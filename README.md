@@ -32,3 +32,8 @@ Feel free to make any changes to the UpdateQuality method and add any new code a
 for you).
 
 Just for clarification, an item can never have its Quality increase above 50, however "Sulfuras" is a legendary item and as such its Quality is 80 and it never alters.
+
+## My approach
+
+- Before refactoring the class or updating it to cater for "conjured" items, I first set up tests for all the conditions laid out in the specification above and made sure they all passed.
+- The next step was to decide what to do first: refactor or cater for "conjured" items. I decided it was best to refactor first.
