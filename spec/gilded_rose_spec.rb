@@ -43,9 +43,9 @@ describe GildedRose do
 
       describe 'Sulfuras, Hand of Ragnaros' do
         it "retains quality if the item is 'Sulfuras, Hand of Ragnaros'" do
-          items = [Item.new("Sulfuras, Hand of Ragnaros", 5, 5)]
+          items = [Item.new("Sulfuras, Hand of Ragnaros", 5, 80)]
           GildedRose.new(items).update_quality()
-          expect(items[0].quality).to eq 5
+          expect(items[0].quality).to eq 80
         end
       end
       
@@ -83,7 +83,7 @@ describe GildedRose do
       end
       describe 'Sulfuras, Hand of Ragnaros' do
         it "doesn't have to be sold by any date if the item is 'Sulfuras, Hand of Ragnaros'" do
-          items = [Item.new("Sulfuras, Hand of Ragnaros", 5, 5)]
+          items = [Item.new("Sulfuras, Hand of Ragnaros", 5, 80)]
           GildedRose.new(items).update_quality()
           expect(items[0].sell_in).to eq 5
         end
