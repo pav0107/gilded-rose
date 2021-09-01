@@ -1,6 +1,8 @@
-======================================
-Gilded Rose Requirements Specification
-======================================
+# Gilded rose tech test
+
+This test was given on week 10 of Makers. Below are the specifications.
+
+## Gilded Rose Requirements Specification
 
 Hi and welcome to team Gilded Rose. As you know, we are a small inn with a prime location in a prominent city ran by a friendly innkeeper named Allison. We also buy and sell only the finest goods.
 
