@@ -17,7 +17,7 @@ class GildedRose
     item.quality += 1 if item.quality < 50
   end
 
-  def update_quality_backstate(item)
+  def update_quality_backstage(item)
     if item.quality < 50
       item.quality += 1
       item.quality += 1 if item.sell_in < 11
@@ -35,7 +35,7 @@ class GildedRose
       elsif item.name == "Aged Brie"
         update_quality_brie(item)
       elsif item.name == "Backstage passes to a TAFKAL80ETC concert"
-        update_quality_backstate(item)
+        update_quality_backstage(item)
       end
     end
   end
