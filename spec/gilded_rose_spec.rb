@@ -41,6 +41,19 @@ describe GildedRose do
         end
       end
 
+      describe 'Conjured' do
+        it "decreases by 2 before sell by date" do
+          items = [Item.new("Conjured", 2, 10)]
+          GildedRose.new(items).update_quality()
+          expect(items[0].quality).to eq 8
+        end
+        it "decreases by 4 after sell by date" do
+          items = [Item.new("Conjured", 0, 10)]
+          GildedRose.new(items).update_quality()
+          expect(items[0].quality).to eq 6
+        end
+      end
+
       describe 'Sulfuras, Hand of Ragnaros' do
         it "retains quality if the item is 'Sulfuras, Hand of Ragnaros'" do
           items = [Item.new("Sulfuras, Hand of Ragnaros", 5, 80)]
