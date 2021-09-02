@@ -11,6 +11,12 @@ class GildedRose
             item.quality -= 1 
         end
         item.sell_in -= 1
+
+        if item.sell_in < 0
+          if item.quality > 0
+            item.quality -= 1
+          end
+        end
       end
       
       if item.name == "Aged Brie"
@@ -35,20 +41,22 @@ class GildedRose
           end
         end
         item.sell_in -= 1
-      end
-
-
-      if item.sell_in < 0
-        if item.name != "Backstage passes to a TAFKAL80ETC concert"
-          if item.quality > 0
-            if item.name != "Sulfuras, Hand of Ragnaros"
-              item.quality -= 1
-            end
-          end
-        else
+        if item.sell_in < 0
           item.quality = 0
         end
       end
+
+      # if item.sell_in < 0
+      #   if item.name != "Backstage passes to a TAFKAL80ETC concert"
+      #     if item.quality > 0
+      #       if item.name != "Sulfuras, Hand of Ragnaros"
+      #         item.quality -= 1
+      #       end
+      #     end
+      #   else
+      #     # item.quality = 0
+      #   end
+      # end
     end
   end
 end
