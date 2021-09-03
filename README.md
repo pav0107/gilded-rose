@@ -1,6 +1,6 @@
 # Gilded rose tech test
 
-This test was given on week 10 of Makers. Below are the specifications.
+This test was given on week 10 of Makers. The main task is to refactor highly nested code. Below are the specifications.ns.
 
 ## Gilded Rose Requirements Specification
 
@@ -37,3 +37,44 @@ Just for clarification, an item can never have its Quality increase above 50, ho
 
 - Before refactoring the class or updating it to cater for "conjured" items, I first set up tests for all the conditions laid out in the specification above and made sure they all passed.
 - The next step was to decide what to do first: refactor or cater for "conjured" items. I decided it was best to refactor first.
+- I pulled out a method first for a normal item, then Brie, then Backstage.
+- I then wrote tests for Conjured and used a similar method to the others.
+
+## Running tests
+
+First clone the repo onto your local machine:
+
+```
+git clone https://github.com/pav0107/gilded-rose.git
+```
+
+Next, install the required gems:
+
+```
+bundle install
+```
+
+If you get a message about your bundler, please update:
+
+```
+gem install bundler
+bundle install
+```
+
+```
+rspec
+```
+
+### Checking test coverage
+
+Currently 99.12% test coverage
+
+```
+open coverage/index.html
+```
+
+### Running the linter
+
+```
+rubocop
+```
