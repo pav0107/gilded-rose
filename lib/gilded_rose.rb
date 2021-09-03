@@ -6,13 +6,14 @@ class GildedRose
 
   def update_quality()
     @items.each do |item|
-      if item.name == "Conjured"
+      case item.name
+      when "Conjured"
         Conjured.new(item).update_quality(item)
-      elsif item.name == "Aged Brie"
+      when "Aged Brie"
         Brie.new(item).update_quality(item)
-      elsif item.name == "Backstage passes to a TAFKAL80ETC concert"
+      when "Backstage passes to a TAFKAL80ETC concert"
         Backstage.new(item).update_quality(item)
-      elsif item.name == "Sulfuras, Hand of Ragnaros"
+      when "Sulfuras, Hand of Ragnaros"
         Sulfuras.new(item).update_quality(item)
       else
         Normal.new(item).update_quality(item)
