@@ -4,48 +4,53 @@ class GildedRose
     @items = items
   end
 
-  def update_quality_normal(item)
-    item.sell_in -= 1
-      if item.quality > 0
-          item.quality -= 1
-          item.quality -= 1 if item.sell_in < 0 
-      end
-  end
+  # def update_quality_normal(item)
+  #   item.sell_in -= 1
+  #     if item.quality > 0
+  #         item.quality -= 1
+  #         item.quality -= 1 if item.sell_in < 0 
+  #     end
+  # end
 
-  def update_quality_conjured(item)
-    item.sell_in -= 1
-      if item.quality > 0
-          item.quality -= 2
-          item.quality -= 2 if item.sell_in < 0 
-      end
-  end
+  # def update_quality_conjured(item)
+  #   item.sell_in -= 1
+  #     if item.quality > 0
+  #         item.quality -= 2
+  #         item.quality -= 2 if item.sell_in < 0 
+  #     end
+  # end
 
-  def update_quality_brie(item)
-    item.sell_in -= 1
-    item.quality += 1 if item.quality < 50
-  end
+  # def update_quality_brie(item)
+  #   item.sell_in -= 1
+  #   item.quality += 1 if item.quality < 50
+  # end
 
-  def update_quality_backstage(item)
-    if item.quality < 50
-      item.quality += 1
-      item.quality += 1 if item.sell_in < 11
-      item.quality += 1 if item.sell_in < 6
-    end
-    item.sell_in -= 1
-    item.quality = 0 if item.sell_in < 0
-  end
+  # def update_quality_backstage(item)
+  #   if item.quality < 50
+  #     item.quality += 1
+  #     item.quality += 1 if item.sell_in < 11
+  #     item.quality += 1 if item.sell_in < 6
+  #   end
+  #   item.sell_in -= 1
+  #   item.quality = 0 if item.sell_in < 0
+  # end
   
 
   def update_quality()
     @items.each do |item|
       if item.name != "Aged Brie" && item.name != "Backstage passes to a TAFKAL80ETC concert" && item.name != "Sulfuras, Hand of Ragnaros" && item.name != "Conjured"
-        update_quality_normal(item)
+        # update_quality_normal(item)
+        normal = Normal.new(item)
+        normal.update_quality(item)
       elsif item.name == "Conjured"
-        update_quality_conjured(item)
+        conjured = Conjured.new(item)
+        conjured.update_quality(item)
       elsif item.name == "Aged Brie"
-        update_quality_brie(item)
+        brie = Brie.new(item)
+        brie.update_quality(item)
       elsif item.name == "Backstage passes to a TAFKAL80ETC concert"
-        update_quality_backstage(item)
+        backstage = Backstage.new(item)
+        backstage.update_quality(item)
       end
     end
   end
@@ -62,5 +67,61 @@ class Item
 
   def to_s()
     "#{@name}, #{@sell_in}, #{@quality}"
+  end
+end
+
+
+class Normal
+  def initialize(items)
+    @items = items
+  end
+
+  def update_quality(item)
+    item.sell_in -= 1
+      if item.quality > 0
+          item.quality -= 1
+          item.quality -= 1 if item.sell_in < 0 
+      end
+  end
+end
+
+class Conjured
+  def initialize(items)
+    @items = items
+  end
+
+  def update_quality(item)
+    item.sell_in -= 1
+      if item.quality > 0
+          item.quality -= 2
+          item.quality -= 2 if item.sell_in < 0 
+      end
+  end
+end
+
+class Brie
+  def initialize(items)
+    @items = items
+  end
+
+  def update_quality(item)
+    item.sell_in -= 1
+    item.quality += 1 if item.quality < 50
+  end
+end
+
+class Backstage
+  def initialize(items)
+    @items = items
+  end
+
+  def update_quality(item)
+    if item.quality < 50
+      item.quality += 1
+      item.quality += 1 if item.sell_in < 11
+      item.quality += 1 if item.sell_in < 6
+    end
+    item.sell_in -= 1
+    item.quality = 0 if item.sell_in < 0
   end
 end
