@@ -39,6 +39,7 @@ Just for clarification, an item can never have its Quality increase above 50, ho
 - The next step was to decide what to do first: refactor or cater for "conjured" items. I decided it was best to refactor first.
 - I pulled out a method first for a normal item, then Brie, then Backstage.
 - I then wrote tests for Conjured and used a similar method to the others.
+- Next, instead of having separate methods within Gilded Rose class, I created separate classes for normal, Brie, Backstage and Sulfuras and moved those methods inside them. Within the Gilded Rose class I now create an instance of the relevant class and call the method on them.
 
 ## Running tests
 
