@@ -7,20 +7,15 @@ class GildedRose
   def update_quality()
     @items.each do |item|
       if item.name == "Conjured"
-        conjured = Conjured.new(item)
-        conjured.update_quality(item)
+        Conjured.new(item).update_quality(item)
       elsif item.name == "Aged Brie"
-        brie = Brie.new(item)
-        brie.update_quality(item)
+        Brie.new(item).update_quality(item)
       elsif item.name == "Backstage passes to a TAFKAL80ETC concert"
-        backstage = Backstage.new(item)
-        backstage.update_quality(item)
+        Backstage.new(item).update_quality(item)
       elsif item.name == "Sulfuras, Hand of Ragnaros"
-        backstage = Sulfuras.new(item)
-        backstage.update_quality(item)
+        Sulfuras.new(item).update_quality(item)
       else
-        normal = Normal.new(item)
-        normal.update_quality(item)
+        Normal.new(item).update_quality(item)
       end
     end
   end
