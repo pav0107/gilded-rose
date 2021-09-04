@@ -40,6 +40,11 @@ Just for clarification, an item can never have its Quality increase above 50, ho
 - I pulled out a method first for a normal item, then Brie, then Backstage.
 - I then wrote tests for Conjured and used a similar method to the others.
 - Next, instead of having separate methods within Gilded Rose class, I created separate classes for normal, Brie, Backstage and Sulfuras and moved those methods inside them. Within the Gilded Rose class I now create an instance of the relevant class and call the method on them.
+- I also moved the new classes into their own files.
+
+## Further work to do
+
+- By creating new classes, my Guilded Rose spec is now more of a feature test, and I need to do unit tests on the individual classes.
 
 ## Running tests
 
