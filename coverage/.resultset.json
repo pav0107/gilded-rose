@@ -151,13 +151,13 @@
           1,
           null,
           1,
-          15,
-          15,
-          15,
+          16,
+          16,
+          16,
           null,
           null,
           1,
-          0,
+          1,
           null,
           null
         ]
@@ -240,8 +240,23 @@
           null,
           null
         ]
+      },
+      "/Users/Pav/Desktop/Makers/Week 10/gilded-rose/spec/item_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1630746591
+    "timestamp": 1633610447
   }
 }
