@@ -73,7 +73,7 @@ rspec
 
 ### Checking test coverage
 
-Currently 99.12% test coverage
+100% test coverage
 
 ```
 open coverage/index.html
