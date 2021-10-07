@@ -1,6 +1,6 @@
 # Gilded rose tech test
 
-This test was given on week 10 of Makers. The main task is to refactor highly nested code. Below are the specifications.ns.
+This test was given on week 10 of Makers. The main task is to refactor highly nested code. Below are the specifications.
 
 ## Gilded Rose Requirements Specification
 
